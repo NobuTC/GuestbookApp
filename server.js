@@ -5,8 +5,13 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
+app.set("view engine", "ejs");
+app.engine("html", require("ejs").renderFile);
+
+app.use(express.static("public"));
+
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.render("pages/frontpage.html");
 });
 
 app.get("/guestbook", (req, res) => {

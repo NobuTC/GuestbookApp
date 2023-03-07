@@ -1,0 +1,146 @@
+@font-face {
+    font-family: Crimeson-regular;
+    src: url(../fonts/CrimsonText-Regular.ttf);
+}
+
+@font-face {
+    font-family: Crimeson-italic;
+    src: url(../fonts/CrimsonText-Italic.ttf);
+}
+
+body {
+    background-color: #FFC8DD;
+    font-family: Crimeson-regular;
+}
+
+.italic-font {
+    font-family: Crimeson-italic;
+}
+
+.cake-pic {
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.cake-pictures img {
+    width: 100%;
+}
+
+.navbar {
+    background: #CDB4DB;
+    ;
+}
+
+.juustokakku {
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.checked {
+    color: orange;
+}
+
+.stars {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.spacing {
+    width: 30px;
+    height: 30px;
+}
+
+.pictures {
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.btn {
+    background-color: #A2D2FF;
+    border: 1px solid #A2D2FF;
+    color: black;
+}
+
+.cardbox {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.card {
+    margin-bottom: 20px;
+}
+
+.textimg {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.linkcolor {
+    color: black
+}
+
+.linkcolor:hover {
+    color: #CDB4DB
+}
+
+.contactSS {
+    background-color: #FFAFCC;
+    font-family: "italic-font";
+    margin: 30px;
+    border-radius: 10px;
+    text-align: left;
+    border: solid 2px #FFAFCC;
+    color: black;
+    overflow: hidden;
+}
+
+.form-image {
+    position: relative;
+    padding: 0%;
+    overflow: hidden;
+}
+
+.greeting {
+    font-size: 70px;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    position: absolute;
+    padding: 15px;
+    font-style: italic;
+}
+
+.bg-image {
+    background-color: black;
+    background: url(dought.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.left-side {
+    padding: 30px;
+}
+
+@media only screen and (max-width: 767px) {
+    .form-image {
+        height: 325px;
+        width: 100%;
+        position: relative;
+    }
+
+    .bg-image {
+        background-color: black;
+        background: url(dought.jpg) no-repeat center center;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+    }
+
+    .greeting {
+        font-size: 40px;
+    }
+}
