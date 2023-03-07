@@ -1,4 +1,3 @@
 # Guestbook App
 
---
-URL: https://myguestbookapp.onrender.com/
+Live demo: https://myguestbookapp.onrender.com/
