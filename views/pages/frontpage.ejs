@@ -1,0 +1,67 @@
+<%- include('../shared/header.ejs') %>
+
+
+    <div class="mb-3 mt-3">
+        <h1 class="italic-font">Tervetuloa kakku maailmaa!</h1>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/carusel5.jpg" class="d-block w-100" alt="picture1">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/carusel3.jpeg" class="d-block w-100" alt="picture2">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/carusel4.png" class="d-block w-100" alt="picture3">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <p>Täällä opit tekemään erilaisia kakkuja!</p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 col-12 theory">
+            <h2>Kakku teoria:</h2>
+            <p>
+                Kakku on leivoinainen, joka koostuu usein sokerista, kananmunista, vehnäjauhosta
+                ja leivinjauheesta, jossa muodostuu taikina. Yleensä kakkuja valmisteellaan juhliin
+                esim. syntymäpäivät ja häät.
+            </p>
+            <p>
+                Erilaisia kakkuja on paljon. Koko ajan keksitään uusija erilaisia kakkuja.
+                Esimerkiksi. täytekakku on yleinen kakku, juustokakku, jota ei välttämättä paisteta uunissa.
+            </p>
+            <h2>Linkki kakkuohjeisiin:</h2>
+            <a class="linkcolor" href="kakkureseptit.html">Kakkureseptit</a>
+        </div>
+        <div class="col-md-6 col-12 cake-pictures">
+            <div class="row">
+                <div class="col-6 cake-pic">
+                    <img src="images/porkkanakakku.jpeg" alt="porkkanakakku" />
+                </div>
+                <div class="col-6 cake-pic">
+                    <img src="images/mantelikakut.jpeg" alt="mantelikakut" />
+                </div>
+                <div class="col-6 cake-pic">
+                    <img src="images/Timohaakakku.jpeg" alt="Timohaakakku" />
+                </div>
+                <div class="col-6 cake-pic">
+                    <img src="images/minijuustokakku.jpeg" alt="minijuustokakku" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <%- include('../shared/footer.ejs') %>
