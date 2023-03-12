@@ -1,0 +1,19 @@
+<%- include('../shared/header.ejs') %>
+
+<h1>Input form</h1>
+
+<form method="post" action="/newmessage">
+    <label for="username">Username:</label><br>
+    <input required="required" type="text" id="username" name="username"><br>
+
+    <label for="country">Country:</label><br>
+    <input required="required" type="text" id="country" name="country"><br>
+
+    <label for="message">Message:</label><br>
+    <input required="required" type="text" id="message" name="message"><br>
+    <br>
+    <button type="submit">submit</button>
+</form>
+
+
+<%- include('../shared/footer.ejs') %>
