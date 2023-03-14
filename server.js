@@ -57,7 +57,7 @@ app.post("/newmessage", (req, res) => {
       username,
       country,
       message,
-      id: parsedData.length + 1,
+      id: String(parsedData.length + 1),
     });
 
     fs.writeFile(dataFile, JSON.stringify(parsedData), (error) => {
@@ -71,8 +71,41 @@ app.post("/newmessage", (req, res) => {
   });
 });
 
+//receiving data from form.
+app.post("/ajaxmessage", (req, res) => {
+  const username = req.body.username;
+  const country = req.body.country;
+  const message = req.body.message;
+
+  fs.readFile(dataFile, "utf8", function (err, data) {
+    if (err) {
+      console.log(err);
+    }
+    const parsedData = JSON.parse(data);
+    parsedData.push({
+      username,
+      country,
+      message,
+      id: String(parsedData.length + 1),
+    });
+
+    fs.writeFile(dataFile, JSON.stringify(parsedData), (error) => {
+      if (error) {
+        console.error(`There is error!`);
+      } else {
+        console.log(`Data is succesfully saved!`);
+        const onlyMessages = parsedData.map((data) => {
+          return data.message;
+        });
+
+        res.json(onlyMessages);
+      }
+    });
+  });
+});
+
 app.get("/ajaxmessage", (req, res) => {
-  res.send("ajaxMessage  is here!");
+  res.render("pages/ajaxmessage");
 });
 
 app.listen(port, () => {

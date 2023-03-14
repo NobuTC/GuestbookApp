@@ -1,0 +1,34 @@
+<%- include('../shared/header.ejs') %>
+
+    <h1>ajaxMessage</h1>
+
+
+    <form id="myForm">
+        <label for="username">Username:</label><br>
+        <input required="required" type="text" id="username" name="username"><br>
+
+        <label for="country">Country:</label><br>
+        <input required="required" type="text" id="country" name="country"><br>
+
+        <label for="message">Message:</label><br>
+        <input required="required" type="text" id="message" name="message"><br>
+        <br>
+        <button type="submit">submit</button>
+    </form>
+
+    <br />
+
+    <style>
+        #messages {
+            display: none;
+        }
+    </style>
+
+    <div id="messages">
+        <h3>Reponse messages:</h3>
+        <code id="message-text"></code>
+    </div>
+
+
+    <script src="js/ajaxMessage.js"></script>
+    <%- include('../shared/footer.ejs') %>
