@@ -3,22 +3,24 @@ const express = require("express");
 const fs = require("fs");
 const bodyParser = require("body-parser");
 
+const port = 3000;
+const dataFile = "guestBookData.json";
+
+// CONFIGURE EXPRESS APP
 // Create express app
 const app = express();
+// get JSON data from request
 app.use(bodyParser.json());
 app.use(
   bodyParser.urlencoded({
     extended: true,
   })
 );
-const port = 3000;
-const dataFile = "guestBookData.json";
-
 app.set("view engine", "ejs");
 app.engine("html", require("ejs").renderFile);
-
 app.use(express.static("public"));
 
+// GET request on / route
 app.get("/", (req, res) => {
   res.render("pages/frontpage");
 });
@@ -53,6 +55,7 @@ app.post("/newmessage", (req, res) => {
       console.log(err);
     }
     const parsedData = JSON.parse(data);
+    // Add new data to the parseData
     parsedData.push({
       username,
       country,
@@ -60,6 +63,7 @@ app.post("/newmessage", (req, res) => {
       id: String(parsedData.length + 1),
     });
 
+    // Write back data to the file
     fs.writeFile(dataFile, JSON.stringify(parsedData), (error) => {
       if (error) {
         console.error(`There is error!`);
@@ -94,6 +98,7 @@ app.post("/ajaxmessage", (req, res) => {
         console.error(`There is error!`);
       } else {
         console.log(`Data is succesfully saved!`);
+        // Return to client only
         const onlyMessages = parsedData.map((data) => {
           return data.message;
         });
@@ -105,7 +110,7 @@ app.post("/ajaxmessage", (req, res) => {
 });
 
 app.get("/ajaxmessage", (req, res) => {
-  res.render("pages/ajaxmessage");
+  res.render("pages/ajaxMessage");
 });
 
 app.listen(port, () => {
